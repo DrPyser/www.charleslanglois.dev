@@ -1,4 +1,4 @@
 baseURL = "https://www.charleslanglois.dev/"
 languageCode = "en-ca"
 title = "My Interweb homepage"
-theme = "base16"
+theme = "terminal"
