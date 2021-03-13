@@ -5,5 +5,5 @@ theme = "terminal"
 
 [params]
   fullWidthTheme = false
-  centerTheme = true
+  centerTheme = false
 
