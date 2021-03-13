@@ -2,3 +2,8 @@ baseURL = "https://www.charleslanglois.dev/"
 languageCode = "en-ca"
 title = "My Interweb homepage"
 theme = "terminal"
+
+[params]
+  fullWidthTheme = false
+  centerTheme = true
+
