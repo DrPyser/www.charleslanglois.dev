@@ -3,6 +3,7 @@ languageCode = "en-ca"
 title = "My Interweb homepage"
 theme = "terminal"
 enableGitInfo = true
+sectionPagesMenu = "main"
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -36,6 +37,10 @@ enableGitInfo = true
   # set all headings to their default size (depending on browser settings)
   # it's set to `true` by default
   # oneHeadingSize = false
+
+  facebookLink = "https://www.facebook.com/charles.langlois.9"
+  mastodonLink = "https://mastodon.online/web/accounts/105416"
+	githubLink = "https://github.com/DrPyser"
 
 [params.twitter]
   # set Twitter handles for Twitter cards
