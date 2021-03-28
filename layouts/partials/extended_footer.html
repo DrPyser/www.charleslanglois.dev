@@ -1,0 +1,11 @@
+<!--
+To add an extended footer section, please create
+`layouts/partials/extended_footer.html` in your Hugo directory.
+-->
+
+Thank you for coming by!
+<br/>
+<br/>
+{{ if .GitInfo }}
+  Page updated on {{ .GitInfo.AuthorDate }}
+{{ end }}
