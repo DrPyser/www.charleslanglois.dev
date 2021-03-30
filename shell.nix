@@ -1,9 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> {}, unstable ? import <nixos-unstable> {} }:
 
 pkgs.mkShell {
 
   buildInputs = [
-    pkgs.hugo
+    unstable.hugo
   ];
 
 }
