@@ -6,6 +6,7 @@ enableGitInfo = true
 sectionPagesMenu = "main"
 
 [params]
+
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
@@ -14,7 +15,7 @@ sectionPagesMenu = "main"
   themeColor = "orange"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 10
 
   # show selector to switch language
   showLanguageSelector = false
@@ -66,7 +67,7 @@ sectionPagesMenu = "main"
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "Terminal"
+      logoText = "charleslanglois.dev"
       logoHomeLink = "/"
 
     [languages.en.menu]
