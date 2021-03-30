@@ -1,4 +1,9 @@
 <footer class="footer">
+  {{ if .GitInfo }}
+    <div class="git-info">
+      <p>Page updated on {{ .GitInfo.AuthorDate }}</p>
+    </div>
+  {{ end }}
   <div class="footer__inner">
     {{ if $.Site.Copyright }}
       <div class="copyright copyright--user">
