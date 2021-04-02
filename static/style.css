@@ -1,0 +1,40 @@
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .social {
+    position: relative;
+    float: right;
+} */
+
+
+
+ul.social-list {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul.social-list li {
+    margin-right: 1em;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.fab {
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 400;
+}
+
+.social-link {
+    font-size: 1.333em;
+}
