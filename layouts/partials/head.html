@@ -28,6 +28,9 @@
   <link rel="shortcut icon" href="{{ printf "img/favicon/%s.png" ($.Site.Params.ThemeColor | default "orange") | absURL }}">
 {{ end }}
 
+<!-- FontAwesome icons -->
+<script src="https://kit.fontawesome.com/2693fce77c.js" crossorigin="anonymous"></script>
+
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary" />
 {{ if (isset $.Site.Params "twitter") }}
