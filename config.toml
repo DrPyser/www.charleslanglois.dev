@@ -43,6 +43,10 @@ sectionPagesMenu = "main"
 
   pgpkeyfile = "/key.pub"
 
+  # website github link
+  github = "https://github.com/DrPyser/www.charleslanglois.dev"
+  favicon = "favicon.ico"
+
 
 [params.social]
   facebookLink = "https://www.facebook.com/charles.langlois.9"

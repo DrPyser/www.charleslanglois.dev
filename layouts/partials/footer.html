@@ -15,6 +15,14 @@
         <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
       </div>
   </div>
+
+  {{ if $.Site.Params.Github }}
+    <p>
+      <a class="github" href="{{ $.Site.Params.Github }}">
+        <i class="fab fa-github"></i> See on GitHub
+      </a>
+    </p>
+  {{ end }}
 </footer>
 
 <script src="{{ "assets/main.js" | absURL }}"></script>

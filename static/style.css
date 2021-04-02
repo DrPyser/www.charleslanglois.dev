@@ -38,3 +38,7 @@ ul.social-list li {
 .social-link {
     font-size: 1.333em;
 }
+
+a.github {
+    text-decoration: none;
+}
