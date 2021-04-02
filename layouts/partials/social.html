@@ -1,0 +1,25 @@
+<div class="social">
+    <ul class="social-list">
+        {{ if $.Site.Params.Social.facebookLink }}
+        <li class="social-item">
+            <a class="social-link" rel="me" href="{{ $.Site.Params.Social.facebookLink }}">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </li>
+        {{ end }}
+        {{ if $.Site.Params.Social.githubLink }}
+        <li class="social-item">
+            <a class="social-link" rel="me" href="{{ $.Site.Params.Social.githubLink }}">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        {{ end }}
+        {{ if $.Site.Params.Social.mastodonLink }}
+        <li class="social-item">
+            <a class="social-link" rel="me" href="{{ $.Site.Params.Social.mastodonLink }}">
+                <i class="fab fa-mastodon"></i>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
