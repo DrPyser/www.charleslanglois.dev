@@ -75,5 +75,9 @@
   <link href="{{ .RelPermalink }}" rel="alternate" type="application/json" title="{{ $.Site.Title }}" />
 {{ end }}
 
+<!-- PGP key -->
+{{ if isset $.Site.Params "pgpkeyfile" }}
+<link rel="pgpkey" href="{{ $.Site.Params.pgpkeyfile }}">
+{{ end }}
 <!-- Extended head section-->
 {{ partial "extended_head.html" . }}
