@@ -2,6 +2,7 @@
 title: "Favorites"
 date: 2021-03-29T20:54:48-04:00
 draft: true
+tags: ["music", "favorite"]
 ---
 
 Here are some of my favorite jams and jammers.

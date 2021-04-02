@@ -2,6 +2,8 @@
 title: "Inventory"
 date: 2021-03-29T20:54:19-04:00
 draft: true
+tags: ["music", "inventory"]
+categories: ["music"]
 ---
 
 This page is a work-in-progress inventory of my music collection.
