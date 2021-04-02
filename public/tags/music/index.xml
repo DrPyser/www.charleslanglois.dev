@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Interweb homepage</title>
-    <link>https://www.charleslanglois.dev/</link>
-    <description>Recent content on My Interweb homepage</description>
+    <title>music on My Interweb homepage</title>
+    <link>https://www.charleslanglois.dev/tags/music/</link>
+    <description>Recent content in music on My Interweb homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 28 Mar 2021 01:22:20 -0400</lastBuildDate><atom:link href="https://www.charleslanglois.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Mar 2021 21:08:36 -0400</lastBuildDate><atom:link href="https://www.charleslanglois.dev/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Music</title>
+      <link>https://www.charleslanglois.dev/music/</link>
+      <pubDate>Mon, 29 Mar 2021 21:08:36 -0400</pubDate>
+      
+      <guid>https://www.charleslanglois.dev/music/</guid>
+      <description>Music is love, music is life.</description>
+    </item>
+    
     <item>
       <title>Favorites</title>
       <link>https://www.charleslanglois.dev/music/favorites/</link>
@@ -26,30 +35,6 @@ Favorite albums  I&amp;rsquo;m with stupid by Aimee Mann  Favorite artists  Aime
       <description>This page is a work-in-progress inventory of my music collection.
 I mostly collect CDs. I find this medium strikes a good balance between the tangible, physical and retrocool aspects, the practical considerations of collecting(form and size factor) and compatibility with the digital world(the CD itself stores digital information that can easily be extracted on a computer).
 Vinyls are nice, but are more bulky, require more costly equipment(for quality playback), and require more effort to digitalize.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://www.charleslanglois.dev/about/</link>
-      <pubDate>Sun, 28 Mar 2021 01:04:57 -0400</pubDate>
-      
-      <guid>https://www.charleslanglois.dev/about/</guid>
-      <description>My name is Charles Langlois. This is my interweb homepage.
-About me I am from Quebec, and currently living in Montreal.
-My mother tongue is French(as in &amp;ldquo;French Canadian&amp;rdquo;). I also speak English more or less fluently.
-I am a tech enthusiast, though I am currently most comfortable working with software.
-I studied computer science at Université de Montréal, and have been working as a programmer for about 4 years.</description>
-    </item>
-    
-    <item>
-      <title>Genesis</title>
-      <link>https://www.charleslanglois.dev/posts/genesis/</link>
-      <pubDate>Sun, 28 Mar 2021 00:49:40 -0400</pubDate>
-      
-      <guid>https://www.charleslanglois.dev/posts/genesis/</guid>
-      <description>This is my first blog post on my first personal website!
-Kinda late, right?
-Better late than never, I hope.</description>
     </item>
     
   </channel>

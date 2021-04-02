@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>favorite on My Interweb homepage</title>
+    <link>https://www.charleslanglois.dev/tags/favorite/</link>
+    <description>Recent content in favorite on My Interweb homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-ca</language>
+    <lastBuildDate>Mon, 29 Mar 2021 20:54:48 -0400</lastBuildDate><atom:link href="https://www.charleslanglois.dev/tags/favorite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Favorites</title>
+      <link>https://www.charleslanglois.dev/music/favorites/</link>
+      <pubDate>Mon, 29 Mar 2021 20:54:48 -0400</pubDate>
+      
+      <guid>https://www.charleslanglois.dev/music/favorites/</guid>
+      <description>Here are some of my favorite jams and jammers.
+Favorite albums  I&amp;rsquo;m with stupid by Aimee Mann  Favorite artists  Aimee Mann  Favorite songs Favorite genres  Rock Jazz Electronica  </description>
+    </item>
+    
+  </channel>
+</rss>

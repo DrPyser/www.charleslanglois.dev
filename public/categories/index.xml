@@ -5,6 +5,16 @@
     <link>https://www.charleslanglois.dev/categories/</link>
     <description>Recent content in Categories on My Interweb homepage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-ca</language><atom:link href="https://www.charleslanglois.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-ca</language>
+    <lastBuildDate>Mon, 29 Mar 2021 20:54:19 -0400</lastBuildDate><atom:link href="https://www.charleslanglois.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>music</title>
+      <link>https://www.charleslanglois.dev/categories/music/</link>
+      <pubDate>Mon, 29 Mar 2021 20:54:19 -0400</pubDate>
+      
+      <guid>https://www.charleslanglois.dev/categories/music/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
