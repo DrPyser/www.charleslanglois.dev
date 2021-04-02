@@ -41,10 +41,12 @@ sectionPagesMenu = "main"
 
   custom_css = ["css/social.css"]
 
+  pgpkeyfile = "/key.pub"
+
 
 [params.social]
   facebookLink = "https://www.facebook.com/charles.langlois.9"
-  mastodonLink = "https://mastodon.online/web/accounts/105416"
+  mastodonLink = "https://mastodon.online/@drpyser"
   githubLink = "https://github.com/DrPyser"
 
 [params.twitter]
