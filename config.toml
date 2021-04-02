@@ -39,9 +39,13 @@ sectionPagesMenu = "main"
   # it's set to `true` by default
   # oneHeadingSize = false
 
+  custom_css = ["css/social.css"]
+
+
+[params.social]
   facebookLink = "https://www.facebook.com/charles.langlois.9"
   mastodonLink = "https://mastodon.online/web/accounts/105416"
-	githubLink = "https://github.com/DrPyser"
+  githubLink = "https://github.com/DrPyser"
 
 [params.twitter]
   # set Twitter handles for Twitter cards
