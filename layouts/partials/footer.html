@@ -1,28 +1,34 @@
 <footer class="footer">
+  <div class="git">
   {{ if .GitInfo }}
     <div class="git-info">
-      <p>Page updated on {{ .GitInfo.AuthorDate }}</p>
+      <span class="git-updated-on">Page updated on {{ .GitInfo.AuthorDate }}</span>
+      <span class="git-revision">Git Revision <a href="{{ $.Site.Params.Github }}/commit/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a></span>
     </div>
   {{ end }}
+  {{ if $.Site.Params.Github }}
+    <a class="github" href="{{ $.Site.Params.Github }}">
+      <i class="fab fa-github"></i> See on GitHub
+    </a>
+  {{ end }}
+  </div>
+  
   <div class="footer__inner">
     {{ if $.Site.Copyright }}
-      <div class="copyright copyright--user">
-        <span>{{ $.Site.Copyright | safeHTML }}</span>
+      <ul class="copyright copyright--user">
+        <li>{{ $.Site.Copyright | safeHTML }}</li>
     {{ else }}
-      <div class="copyright">
-        <span>© {{ now.Year }} Powered by <a href="http://gohugo.io">Hugo</a></span>
+      <ul class="copyright">
+        <li>© {{ now.Year }} Powered by <a href="http://gohugo.io">Hugo</a></li>
     {{ end }}
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
-      </div>
+        <li>:: Theme made by <a href="https://twitter.com/panr">panr</a></li>
+        <li class="layloo-attribution">
+          ::
+          <a href="{{ $.Site.Params.favicon }}">Website Icon</a> designed by 
+          <a href="https://www.instagram.com/mycrazycolouredmind/">Layloo Lapierre</a>
+        </li>
+      </ul>
   </div>
-
-  {{ if $.Site.Params.Github }}
-    <p>
-      <a class="github" href="{{ $.Site.Params.Github }}">
-        <i class="fab fa-github"></i> See on GitHub
-      </a>
-    </p>
-  {{ end }}
 </footer>
 
 <script src="{{ "assets/main.js" | absURL }}"></script>
