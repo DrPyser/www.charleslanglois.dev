@@ -48,10 +48,19 @@ sectionPagesMenu = "main"
   favicon = "favicon.ico"
 
 
+# for links to social profiles
 [params.social]
   facebookLink = "https://www.facebook.com/charles.langlois.9"
-  mastodonLink = "https://mastodon.online/@drpyser"
+  mastodonLink = "https://indieweb.social/@drpyser"
   githubLink = "https://github.com/DrPyser"
+
+# info for hcard
+[params.hcard]
+	city = "Montreal"
+	country = "Canada"
+	region = "Quebec"
+	email = "schok53@gmail.com"
+	name = "Charles Langlois"
 
 [params.twitter]
   # set Twitter handles for Twitter cards
@@ -85,6 +94,14 @@ sectionPagesMenu = "main"
         identifier = "about"
         name = "About"
         url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "music"
+        name = "Music"
+        url = "/music"
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts"
       # [[languages.en.menu.main]]
       #   identifier = "showcase"
       #   name = "Showcase"
