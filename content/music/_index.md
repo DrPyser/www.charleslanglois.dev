@@ -6,3 +6,5 @@ tags: ["music"]
 ---
 
 Music is love, music is life.
+
+{{% lastfm %}}
