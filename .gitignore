@@ -1,5 +1,6 @@
 *~
 *#
 ~.bak
-.swp
-public
+*.swp
+*.swo
+public/
