@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "hugo-theme-terminal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1644230915,
+        "narHash": "sha256-ZX3QrDhTP/2Uk8BeZg84wqvDqOJBj7XFyKOPNCKP8yM=",
+        "owner": "panr",
+        "repo": "hugo-theme-terminal",
+        "rev": "9d458d193fee9dd35843baddd41e1ba99c29aef4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "panr",
+        "repo": "hugo-theme-terminal",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1645043294,
+        "narHash": "sha256-GjiUAlxaPowOU98jrH6sCgq3TVXQFRRRHCus1GYEYNk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "2ad069c3fdb461088db9f8b04af9a27ecce4fa89",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "hugo-theme-terminal": "hugo-theme-terminal",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
