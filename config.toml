@@ -4,6 +4,7 @@ title = "My Interweb homepage"
 theme = "terminal"
 enableGitInfo = true
 sectionPagesMenu = "main"
+author = "Charles Langlois"
 
 [params]
 

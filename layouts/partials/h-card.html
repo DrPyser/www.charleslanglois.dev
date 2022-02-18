@@ -1,0 +1,12 @@
+<div class="h-card">
+  <div class="head">
+    <img src="/favicon-32x32.png">
+		<div class="info">
+      <h2>
+        <a class="p-name u-url home" href="{{ $.Site.BaseURL }}">{{ $.Site.Params.Hcard.Name }}</a>
+      </h2>
+      <p><span class="p-locality">{{ $.Site.Params.Hcard.City }}</span>, <span class="p-region">{{ $.Site.Params.Hcard.Region }}</span>, <span class="p-country-name">{{ $.Site.Params.Hcard.Country }}</span></p>
+      <a rel="u-email" href="mailto:{{ $.Site.Params.Hcard.Email }}">Email</a>
+    </div>
+  </div>
+</div>

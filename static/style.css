@@ -5,6 +5,10 @@
     justify-content: space-between;
 }
 
+.menu.hidden {
+    display: none;
+}
+
 /* .social {
     position: relative;
     float: right;
@@ -15,12 +19,18 @@
 ul.social-list {
     list-style: none;
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
     margin-left: 10px;
     margin-right: 30px;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+@media (min-width:684px) {
+    ul.social-list {
+        flex-direction: row;
+    }
 }
 
 ul.social-list li {
@@ -31,14 +41,89 @@ ul.social-list li {
 }
 
 .fab {
-	font-family: "Font Awesome 5 Brands";
-	font-weight: 400;
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
 }
 
 .social-link {
     font-size: 1.333em;
 }
 
+.footer div.git {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.footer .git-info {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: bottom;
+    justify-content: center;
+}
+
 a.github {
     text-decoration: none;
+}
+
+
+@media (min-width:684px) {
+    .footer div.git {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .git-info {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.layloo-attribution {
+    display: inline;
+    vertical-align: middle;
+}
+
+.footer .copyright {
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+div.h-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 2px #ccc;
+  align-items: center;
+  border: solid white;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.h-card .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.h-card .head .info {
+  vertical-align: center;
+}
+
+div.h-card div img {
+/*  display: inline;*/
+	float: left;
+	/*width: 80px;*/
+/*	height: 80px;*/
+	margin: 1.5em auto;
+	padding: 1em auto;
+}
+
+div.h-card h2 {
+  margin: 0;
 }
