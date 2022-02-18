@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/drpyser
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.charleslanglois.dev
+  * I am drpyser (https://keybase.io/drpyser) on keybase.
+  * I have a public key ASDUWGF4BIkjA2Bv7AJcYyEnYjf0zUv5eZANlRHVTqeJUQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d458617804892303606fec025c6321276237f4cd4bf979900d9511d54ea789510a",
+      "host": "keybase.io",
+      "kid": "0120d458617804892303606fec025c6321276237f4cd4bf979900d9511d54ea789510a",
+      "uid": "6113ab1be640d06a636fff6fa93fb119",
+      "username": "drpyser"
+    },
+    "merkle_root": {
+      "ctime": 1617673126,
+      "hash": "3dc5af08ba2c7936072e0809686fe5f968ff315f8fc58fa718bbbebf38d0488c67457b69b19deb255e32726343c4e87d1783c5a1d32d605ae6f1d9d66a6fbb95",
+      "hash_meta": "eb8c337ddd6c9570518c1df157daf7c6457c580174f904895df565e39e674a21",
+      "seqno": 19555215
+    },
+    "service": {
+      "entropy": "cpzswDy0aCEXn/6cZap8r2re",
+      "hostname": "www.charleslanglois.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.4.2"
+  },
+  "ctime": 1617673159,
+  "expire_in": 504576000,
+  "prev": "fc49d34237604cbe496bf2d7831b00ca9e91ab8653af63ed804b4244e45f94d4",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg1FhheASJIwNgb+wCXGMhJ2I39M1L+XmQDZUR1U6niVEKp3BheWxvYWTESpcCB8Qg/EnTQjdgTL5Ja/LXgxsAyp6Rq4ZTr2PtgEtCRORflNTEIHcJMdNjQB+PDpJ7QInbGGrWQkvlZw4bm5fi01sxPWDSAgHCo3NpZ8RAEqXReDBB4t77b/W0QhuGeCcSB98qdRZnvw3eZeCQ3/4ly5qkDQiydpl/Ly7OvQ8L6/EpqQ9pVE4IgqQ174M5DahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEINuY0sFbYw0CbTwDqBlRE/Xd3HFfUOVu5E0Dtx6KV1U0o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/drpyser
+
+==================================================================
