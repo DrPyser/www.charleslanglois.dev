@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1644229661,
+        "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "ref": "master",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "hugo-theme-terminal": {
       "flake": false,
       "locked": {
@@ -18,11 +34,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1645162597,
-        "narHash": "sha256-S4sRtJBqVlBg4H7EPAv0NFofGNCayHEMpLnUzGNCCKM=",
+        "lastModified": 1645423249,
+        "narHash": "sha256-bUIvqkZ49Xrv3hwA3sOk8ROPsz9d9k7fgpJT8Rurk4o=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b715fcd9d9e26b99182d902c6b5694be0daae6d5",
+        "rev": "f9e65e44e5d313e8c83957a65928a77630dae26f",
         "type": "github"
       },
       "original": {
@@ -33,6 +49,7 @@
     },
     "root": {
       "inputs": {
+        "flake-utils": "flake-utils",
         "hugo-theme-terminal": "hugo-theme-terminal",
         "nixpkgs": "nixpkgs"
       }

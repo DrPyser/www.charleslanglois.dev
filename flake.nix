@@ -1,33 +1,46 @@
 {
-  description = "my personal website";
+  # description = "my personal website";
 
-	inputs = {
-  	nixpkgs.url = "github:nixos/nixpkgs";
-  	hugo-theme-terminal = {
-    	url = "github:panr/hugo-theme-terminal";
-    	flake = false;
-  	};
-	};
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils/master";
+    hugo-theme-terminal = {
+      url = "github:panr/hugo-theme-terminal";
+      flake = false;
+    };
+  };
 
-  outputs = { self, nixpkgs, hugo-theme-terminal }: let
-		pkgs = nixpkgs.legacyPackages.x86_64-linux;
-	in {
-    defaultPackage.x86_64-linux =
+  outputs = { self, nixpkgs, hugo-theme-terminal, flake-utils }: let
+    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    buildInputs = [ pkgs.hugo pkgs.caddy ];
+  in {
+    website.x86_64-linux =
       with import nixpkgs { system = "x86_64-linux"; };
       stdenv.mkDerivation {
+        inherit buildInputs;
         # url = "https://github.com/DrPyser/www.charleslanglois.dev.git";
         name = "www.charleslanglois.dev";
-        src = self;
-        buildInputs = [ pkgs.hugo ];
-    #     builder = builtins.toFile "builder.sh" ''
-				# source $stdenv/setup;
-				# export PATH=$hugo/bin:$PATH
-				# '';
-        # installPhase = "mkdir -p $out/bin; install -t $out/bin hello";
+        src = builtins.trace "source path is ${self.sourceInfo}" self;
+        dontConfigure = true;
+        dontInstall = true;
+        preferLocalBuild = true;
+        buildPhase = let sourceInfo = (if self ? sourceInfo && self.sourceInfo ? rev && self.sourceInfo && shortRev && self.sourceInfo ? lastModifiedDate then self.sourceInfo else { rev = "dirty"; shortRev = "dirty"; lastModifiedDate = "$(date)"; });
+        in
+        ''
+        mkdir -p themes;
+        ln -snf "${hugo-theme-terminal}" themes/terminal
+        export HUGO_GIT_REV=${sourceInfo.rev}
+        export HUGO_GIT_SHORTREV=${sourceInfo.shortRev}
+        export HUGO_GIT_LASTMODIFIED=${sourceInfo.lastModifiedDate}
+        
+        make build OUT=$out/public;
+        '';
+        installPhase = "";
     };
+    defaultPackage.x86_64-linux = self.website;
     devShell.x86_64-linux = pkgs.mkShell {
-      buildInputs = [ pkgs.hugo pkgs.caddy ];
-			shellHook = ''
+      inherit buildInputs;
+      shellHook = ''
       mkdir -p themes
       ln -snf "${hugo-theme-terminal}" themes/terminal
       '';
