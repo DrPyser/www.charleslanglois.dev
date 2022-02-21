@@ -1,10 +1,13 @@
 .PHONY: build publish clean
 
+OUT=?./public
 build:
-	hugo -D
+	hugo -D -d ${OUT}
+
+nix-build: build
+	nix build
 
 public: build
-	
 
 publish: build
 	bash -x push.rsync.sh

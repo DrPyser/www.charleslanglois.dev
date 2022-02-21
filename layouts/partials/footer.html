@@ -1,3 +1,4 @@
+{{ $GitInfo := dict "Hash" (os.Getenv "HUGO_GIT_REV") "AbbreviatedHash" (os.Getenv "HUGO_GIT_SHORTREV") "AuthorDate" (os.Getenv "HUGO_GIT_LASTMODIFIED") }}
 <footer class="footer">
   <div class="git">
   {{ if .GitInfo }}
