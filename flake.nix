@@ -37,7 +37,7 @@
         '';
         installPhase = "";
     };
-    defaultPackage.x86_64-linux = self.website;
+    defaultPackage.x86_64-linux = self.website.x86_64-linux;
     devShell.x86_64-linux = pkgs.mkShell {
       inherit buildInputs;
       shellHook = ''
