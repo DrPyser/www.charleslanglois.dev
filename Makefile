@@ -1,13 +1,15 @@
-.PHONY: build publish clean
+.PHONY: build publish clean flake-update container
 
-OUT=?./public
-build:
+CADDYFILE=Caddyfile
+OUT=?./public/
+$(OUT):
 	hugo -D -d ${OUT}
 
-nix-build: build
-	nix build
+PACKAGE?=
+nix-build: 
+	nix build $(PACKAGE)
 
-public: build
+build: $(OUT)
 
 publish: build
 	bash -x push.rsync.sh
@@ -18,4 +20,10 @@ clean:
 flake-update:
 	nix flake update
 
+CONTAINER_NAME?=www-charleslanglois-dev
+CONTAINER_DIR?=/var/lib/machines
+CONTAINER_PATH=$(CONTAINER_DIR)/$(CONTAINER_NAME)
+$(CONTAINER_PATH): nix-build
+	nixos-container create --flake=flake.nix $(CONTAINER_NAME)
 
+container: $(CONTAINER_PATH)

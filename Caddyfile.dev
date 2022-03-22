@@ -2,11 +2,11 @@
 	# TLS configuration, ...
 }
 
-charleslanglois.dev {
+charleslanglois.localhost {
 	redir https://www.charleslanglois.dev{uri}
 }
 
-www.charleslanglois.dev {
+www.charleslanglois.localhost {
 	root * {$SITE_DIR}/public/
 	encode zstd gzip
 	file_server
