@@ -6,6 +6,19 @@ theme = "terminal"
 sectionPagesMenu = "main"
 author = "Charles Langlois"
 
+# related content sections
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+[[related.indices]]
+  name = 'tags'
+  weight = 100
+[[related.indices]]
+  name = 'date'
+  weight = 10
+
+
 [params]
 
   # dir name of your main content (default is `content/posts`).
@@ -26,9 +39,6 @@ author = "Charles Langlois"
 
   # center theme with default width
   centerTheme = false
-
-  # set a custom favicon (default is a `themeColor` square)
-  # favicon = "favicon.ico"
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated

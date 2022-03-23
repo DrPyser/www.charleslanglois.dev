@@ -1,11 +1,11 @@
 .PHONY: build publish clean flake-update container
 
 CADDYFILE=Caddyfile
-OUT=?./public/
-$(OUT):
+OUT:=./public/
+$(OUT): content static layout theme resources
 	hugo -D -d ${OUT}
 
-PACKAGE?=
+PACKAGE?=.#
 nix-build: 
 	nix build $(PACKAGE)
 
@@ -15,7 +15,7 @@ publish: build
 	bash -x push.rsync.sh
 
 clean:
-	rm -r public/
+	rm -r $(OUT)
 
 flake-update:
 	nix flake update
