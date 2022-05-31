@@ -113,6 +113,10 @@ author = "Charles Langlois"
         identifier = "posts"
         name = "Posts"
         url = "/posts"
+      [[languages.en.menu.main]]
+        identifier = "now"
+        name = "Now"
+        url = "/now"
       # [[languages.en.menu.main]]
       #   identifier = "showcase"
       #   name = "Showcase"
