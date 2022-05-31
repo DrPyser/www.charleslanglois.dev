@@ -1,8 +1,14 @@
+SHELL=/usr/bin/env bash
+SHELLFLAGS=-eux -o pipefail
+MAKEFLAGS+=--no-builtin-rules --warn-undefined-variables
 .PHONY: build publish clean flake-update container
+.DELETE_ON_ERROR:
 
 CADDYFILE=Caddyfile
 OUT:=./public/
-$(OUT): content static layout theme resources
+DIRS=content static layouts themes resources assets
+FILES=$(shell fd . $(DIRS)) config.toml
+$(OUT): $(FILES)
 	hugo -D -d ${OUT}
 
 PACKAGE?=.#
