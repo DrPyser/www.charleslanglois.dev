@@ -1,0 +1,47 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Install Nix
+        # You may pin to the exact commit or the version.
+        # uses: cachix/install-nix-action@d64e0553100205688c0fb2fa16edb0fc8663c590
+        uses: cachix/install-nix-action@v17
+        with:
+          # Installation URL that will contain a script to install Nix.
+          # install_url: # optional
+          # Additional installer flags passed to the installer script.
+          # install_options: # optional
+          # Set NIX_PATH environment variable.
+          nix_path: nixpkgs=channel:nixos-unstable
+          # gets appended to `/etc/nix/nix.conf` if passed.
+          # extra_nix_config: # optiona
+
+      - run: nix-build -A checks.x86_64-linux
+      - run: scripts/publish.sh
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        if: github.ref == 'refs/heads/main'
+
