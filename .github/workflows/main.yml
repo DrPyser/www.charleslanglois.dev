@@ -39,7 +39,7 @@ jobs:
           # gets appended to `/etc/nix/nix.conf` if passed.
           # extra_nix_config: # optiona
 
-      - run: nix build -A .#checks.x86_64-linux
+      - run: nix build .#checks.x86_64-linux
       - run: scripts/publish.sh
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
