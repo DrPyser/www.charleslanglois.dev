@@ -1,1 +1,1 @@
-rsync -avzP -e ssh ./public/ rsync://root@viachicago.vultr/charleslanglois.dev
+rsync -avzP -e ssh ./public/ rsync://root@viachicago.vultr/charleslanglois.dev/public
