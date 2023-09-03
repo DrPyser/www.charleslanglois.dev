@@ -1,7 +1,7 @@
 ---
 title: "Favorites"
 date: 2021-03-29T20:54:48-04:00
-draft: true
+draft: false
 tags: ["music", "favorite"]
 ---
 

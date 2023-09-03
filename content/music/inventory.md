@@ -1,7 +1,7 @@
 ---
 title: "Inventory"
 date: 2021-03-29T20:54:19-04:00
-draft: true
+draft: false
 tags: ["music", "inventory"]
 categories: ["music"]
 ---
