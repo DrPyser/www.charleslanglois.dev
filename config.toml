@@ -26,7 +26,7 @@ author = "Charles Langlois"
   contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
+  themeColor = "blue"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 10
@@ -38,7 +38,7 @@ author = "Charles Langlois"
   fullWidthTheme = false
 
   # center theme with default width
-  centerTheme = false
+  centerTheme = true
 
   # set post to show the last updated
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
@@ -70,7 +70,7 @@ author = "Charles Langlois"
 	city = "Montreal"
 	country = "Canada"
 	region = "Quebec"
-	email = "schok53@gmail.com"
+	email = "contact@charleslanglois.dev"
 	name = "Charles Langlois"
 
 [params.twitter]
@@ -80,8 +80,11 @@ author = "Charles Langlois"
   creator = ""
   site = ""
 
+defaultContentLanguage = "en-CA"
 [languages]
   [languages.en]
+    disabled = false
+    weight = 0
     languageName = "English"
     title = "My Interweb homepage"
     subtitle = ""
