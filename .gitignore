@@ -5,3 +5,4 @@
 *.swo
 public
 public/*
+hosts/ssh_config
