@@ -1,0 +1,29 @@
+{
+  "subject": "acct:contact@charleslanglois.dev",
+  "aliases": [
+    "acct:self@charleslanglois.dev",
+    "acct:charles@charleslanglois.dev",
+    "acct:me@charleslanglois.dev",
+    "acct:drpyser@indieweb.social",
+    "https://www.charleslanglois.dev"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://www.charleslanglois.dev/about"
+    },
+    {
+      "rel": "me",
+      "href": "https://indieweb.social/users/drpyser"
+    },
+    {
+      "rel": "me",
+      "href": "https://www.facebook.com/charles.langlois.9"
+    },
+    {
+      "rel": "me",
+      "href": "https://github.com/DrPyser"
+    }
+  ]
+}
