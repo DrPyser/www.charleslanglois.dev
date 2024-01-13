@@ -1,17 +1,11 @@
-{
-	# TLS configuration, ...
-}
-
 charleslanglois.dev {
 	redir https://www.charleslanglois.dev{uri}
 }
 
+# serve website domain
 www.charleslanglois.dev {
-	root * {$SITE_DIR}/public/
+	root * /srv/www/
+	log
 	encode zstd gzip
 	file_server
-	## uncomment when onion version is available
-	# header {
-	#   Onion-Location "http://www.charleslanglois.dev.onion"
-	# }
 }
