@@ -1,0 +1,25 @@
+---
+- name: update server configuration
+  hosts: prod
+  #become: root
+  tasks:
+    - name: update webserver configuration file
+      ansible.builtin.copy:
+        src: root/Caddyfile
+        dest: /etc/caddy/Caddyfile
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+    - name: update website content files
+      ansible.builtin.copy:
+        src: root/public/
+        dest: /srv/www/
+        owner: caddy
+        group: caddy
+        mode: u=rw,g=r,o=r
+    - name: ensure webserver service is up
+      ansible.builtin.service:
+        name: caddy
+        state: reloaded
+        enabled: true
+

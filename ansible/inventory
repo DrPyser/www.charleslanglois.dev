@@ -1,0 +1,2 @@
+[webservers]
+prod ansible_host=216.128.185.151 ansible_user=root ansible_ssh_port=7620
