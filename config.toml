@@ -2,7 +2,7 @@ baseURL = "https://www.charleslanglois.dev/"
 languageCode = "en-ca"
 title = "My Interweb homepage"
 theme = "terminal"
-# enableGitInfo = true
+enableGitInfo = true
 sectionPagesMenu = "main"
 author = "Charles Langlois"
 
