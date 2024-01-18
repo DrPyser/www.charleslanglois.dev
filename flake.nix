@@ -2,7 +2,7 @@
   # description = "my personal website";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils/master";
     hugo-theme-terminal = {
       url = "github:panr/hugo-theme-terminal";
@@ -57,13 +57,15 @@
 
     defaultPackage.x86_64-linux = self.website.x86_64-linux;
 
-    devShell.x86_64-linux = pkgs.mkShell {
-      inherit buildInputs;
-      shellHook = ''
-      mkdir -p themes
-      ln -snf "${hugo-theme-terminal}" themes/terminal
-      '';
-    };
+    devShell.x86_64-linux =
+      import ./shell.nix { inherit pkgs; };
+    # pkgs.mkShell {
+    #   inherit buildInputs;
+    #   shellHook = ''
+    #   mkdir -p themes
+    #   ln -snf "${hugo-theme-terminal}" themes/terminal
+    #   '';
+    # };
 
     nixosConfigurations.container = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
