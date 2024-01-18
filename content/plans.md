@@ -19,5 +19,10 @@ summary: "In which I rattle on about my plans like a stereotypical vilain"
 
 ## website
 - continue [indiewebifying this website](https://indieweb.org/IndieMark) and reach for [indieweb holy grail](https://indieweb.org/graphics#Illustrations_and_Sketch_Notes)
-- add notes sections for short form informal pieces of thoughts and knowledge
-- add more content about stuff I find interesting; share interesting blogs, channels and cool stuff and people.
+    - microformats in the html
+- add "notes" section for short form informal pieces of thoughts and knowledge
+- add more content about stuff I find interesting; share interesting blogs, video channels and other cool stuff and people I encounter.
+- UX improvements
+- more buttons
+- [terminal ui](https://github.com/xtermjs/xterm.js/)
+- play around with [HTMX](https://htmx.org/)
