@@ -11,13 +11,17 @@
         group: root
         mode: u=rw,g=r,o=r
     - name: update website content files
-      ansible.builtin.copy:
+      ansible.posix.synchronize:
         src: root/public/
         dest: /srv/www/
+    - name: updated permissions on website files
+      ansible.builtin.file:
+        path: /srv/www
         owner: caddy
         group: caddy
-        mode: u=rw,g=r,o=r
-    - name: ensure webserver service is up
+        mode: 0744
+        recurse: true
+    - name: ensure webserver service is up and reloaded
       ansible.builtin.service:
         name: caddy
         state: reloaded
