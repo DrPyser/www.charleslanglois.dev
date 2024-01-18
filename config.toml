@@ -113,3 +113,7 @@ defaultContentLanguage = "en-CA"
         identifier = "now"
         name = "Now"
         url = "/now"
+      [[languages.en.menu.main]]
+        identifier = "plans"
+        name = "Plans"
+        url = "/plans"
