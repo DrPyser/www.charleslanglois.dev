@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the workflow will run
@@ -39,9 +37,9 @@ jobs:
           # gets appended to `/etc/nix/nix.conf` if passed.
           # extra_nix_config: # optiona
 
-      - run: nix build .#checks.x86_64-linux
-      - run: scripts/publish.sh
-        env:
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        if: github.ref == 'refs/heads/main'
+      - run: nix-shell --run 'make build'
+      # - run: scripts/publish.sh
+      #   env:
+      #     DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      #   if: github.ref == 'refs/heads/main'
 
