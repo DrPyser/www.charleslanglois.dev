@@ -6,3 +6,9 @@
 public
 public/*
 hosts/ssh_config
+.direnv
+*.tfstate
+*.backup
+*.tmp
+*.terraform*
+*.tfvars
