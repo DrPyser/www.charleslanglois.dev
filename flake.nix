@@ -58,7 +58,8 @@
     defaultPackage.x86_64-linux = self.website.x86_64-linux;
 
     devShell.x86_64-linux =
-      import ./shell.nix { inherit pkgs; };
+      import ./shell.nix { inherit pkgs; theme = "terminal"; themePath = hugo-theme-terminal; };
+      
     # pkgs.mkShell {
     #   inherit buildInputs;
     #   shellHook = ''
