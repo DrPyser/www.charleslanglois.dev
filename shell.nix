@@ -4,6 +4,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     hugo
     ansible
+    flyctl
   ];
   shellHook = ''
   # set -x
