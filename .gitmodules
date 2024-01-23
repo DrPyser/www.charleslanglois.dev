@@ -3,4 +3,4 @@
 	url = git@github.com:htdvisser/hugo-base16-theme.git
 [submodule "themes/terminal"]
 	path = themes/terminal
-	url = git@github.com:panr/hugo-theme-terminal.git
+	url = https://github.com/panr/hugo-theme-terminal
