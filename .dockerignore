@@ -1,0 +1,14 @@
+# flyctl launch added from .gitignore
+**/*~
+**/*#
+**/~.bak
+**/*.swp
+**/*.swo
+**/hosts/ssh_config
+**/.direnv
+**/*.tfstate
+**/*.backup
+**/*.tmp
+**/*.terraform*
+**/*.tfvars
+fly.toml
