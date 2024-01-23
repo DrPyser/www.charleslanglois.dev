@@ -1,29 +1,30 @@
 SHELL=/usr/bin/env bash
 SHELLFLAGS=-eux -o pipefail
 MAKEFLAGS+=--no-builtin-rules --warn-undefined-variables
-.PHONY: build publish clean rebuild nix/flake/update nix/flake/build nix/flake/container fly.io/deploy fly.io/launch fly.io/status
+.PHONY: build publish ansible/publish clean rebuild nix/flake/update nix/flake/build nix/flake/container fly.io/deploy fly.io/launch fly.io/status
 .DELETE_ON_ERROR:
 
 CADDYFILE=Caddyfile
-OUT:=./public/
+
+OUT:=./public
 DIRS=content static layouts themes resources
 FILES=$(shell fd . $(DIRS)) config.toml
-$(OUT): $(FILES)
-	hugo -D -d ${OUT}
+BUILDOPTS:=-D -d 
 
-PACKAGE?=.#
-nix/flake/build:
-	nix build $(PACKAGE)
+$(OUT): $(FILES)
+	hugo $(BUILDOPTS) ${OUT}
 
 build: $(OUT)
-
-publish: build
-	ansible-playbook -i ansible/inventory ansible/playbooks/update_server.yml
 
 clean:
 	rm -r $(OUT)
 
 rebuild: clean build
+
+# nix stuff
+PACKAGE?=.#
+nix/flake/build:
+	nix build $(PACKAGE)
 
 nix/flake/update:
 	nix flake update
@@ -36,7 +37,11 @@ $(CONTAINER_PATH): nix/flake/build
 
 nix/container: $(CONTAINER_PATH)
 
+# ansible stuff
+ansible/publish: build
+	ansible-playbook -i ansible/inventory ansible/playbooks/update_server.yml
 
+# fly.io stuff
 fly.io/deploy: fly.toml
 	flyctl deploy
 
@@ -45,3 +50,4 @@ fly.io/init: fly.toml
 
 fly.io/status: fly.toml
 	flyctl status
+
