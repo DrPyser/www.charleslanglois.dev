@@ -12,3 +12,4 @@ hosts/ssh_config
 *.tmp
 *.terraform*
 *.tfvars
+static/git-info.txt
