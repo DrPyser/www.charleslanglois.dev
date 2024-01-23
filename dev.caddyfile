@@ -1,0 +1,18 @@
+{
+	# TLS configuration, ...
+	auto_https off
+	log {
+		format console
+	}
+}
+
+charleslanglois.localhost {
+	redir http://www.charleslanglois.dev{uri}
+}
+
+http://localhost {
+	root * /srv/www
+	log
+	encode zstd gzip
+	file_server
+}
