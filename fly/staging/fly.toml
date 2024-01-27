@@ -7,6 +7,11 @@ app = "www-charleslanglois-dev"
 primary_region = "yul"
 
 [build]
+  build-target = "final"
+  [build.args]
+    CADDYFILE="fly/staging/Caddyfile"
+    ENVIRONMENT="staging"
+    HUGO_BASEURL="https://www2.charleslanglois.dev"
 
 [http_service]
   internal_port = 80

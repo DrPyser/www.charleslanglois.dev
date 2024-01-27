@@ -4,10 +4,12 @@
 		format console
 	}
 }
+
 # serve website domain
 http://www-charleslanglois-dev.fly.dev {
 	redir http://www2.charleslanglois.dev{uri}
 }
+
 http://www2.charleslanglois.dev {
 	root * /srv/www/
 	log
