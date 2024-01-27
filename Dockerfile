@@ -8,7 +8,7 @@ ARG HUGO_BUILDOPTS="-D --enableGitInfo --environment $ENVIRONMENT -d /public"
 # COPY . /src
 COPY themes /src/themes
 COPY content /src/content
-COPY config.toml go.mod /src/
+COPY config.toml /src/
 COPY archetypes /src/archetypes
 COPY resources /src/resources
 COPY layouts /src/layouts
@@ -16,9 +16,11 @@ COPY static /src/static
 COPY assets /src/assets
 COPY .git /src/.git
 
-RUN echo -e "rev=$(git rev-parse HEAD)\nbranch=$(git rev-parse --abbrev-ref HEAD)\ndescription=$(git describe --abbrev --all --long --dirty)" > /src/static/git-info.txt
+RUN echo -e "rev=$(git rev-parse HEAD)\n"\
+    "branch=$(git rev-parse --abbrev-ref HEAD)\n"\
+    "description=$(git describe --abbrev --all --long --dirty)" \
+    > /src/static/git-info.txt
 
-RUN hugo mod get -u 
 RUN hugo $HUGO_BUILDOPTS
 
 FROM caddy:2.7 as final
