@@ -5,8 +5,9 @@
 	}
 }
 
-http://www2.charleslanglois.dev, 
-http://www2-charleslanglois-dev-crimson-night-7748.fly.dev {
+
+http://www-charleslanglois-dev.fly.dev, 
+http://www.charleslanglois.dev {
 	root * /srv/www/
 	log
 	encode zstd gzip

@@ -3,15 +3,15 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "www2-charleslanglois-dev-crimson-night-7748"
+app = "www-charleslanglois-dev"
 primary_region = "yul"
 
 [build]
   build-target = "final"
   [build.args]
-    CADDYFILE="fly/staging/Caddyfile"
-    ENVIRONMENT="staging"
-    HUGO_BASEURL="https://www2.charleslanglois.dev"
+    CADDYFILE="fly/production/Caddyfile"
+    ENVIRONMENT="production"
+    HUGO_BASEURL="https://www.charleslanglois.dev"
 
 [http_service]
   internal_port = 80
