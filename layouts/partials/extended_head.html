@@ -1,0 +1,14 @@
+<!-- FontAwesome icons -->
+<script src="https://kit.fontawesome.com/2693fce77c.js" crossorigin="anonymous"></script>
+
+<!-- PGP key -->
+{{ if isset $.Site.Params "pgpkeyfile" }}
+<link rel="pgpkey" href="{{ $.Site.Params.pgpkeyfile }}">
+{{ end }}
+
+<!-- indieauth -->
+<link rel="openid.delegate" href="https://www.charleslanglois.dev/" />
+<link rel="openid.server" href="https://openid.indieauth.com/openid" />
+<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+<link rel="token_endpoint" href="https://tokens.indieauth.com/">
+<!--<link rel="micropub" href="/micropub">-->
