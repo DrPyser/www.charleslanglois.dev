@@ -66,11 +66,12 @@ author = "Charles Langlois"
 
 # info for hcard
 [params.hcard]
-	city = "Gatineau"
-	country = "Canada"
-	region = "Quebec"
-	email = "contact@charleslanglois.dev"
-	name = "Charles Langlois"
+    city = "Gatineau"
+    country = "Canada"
+    region = "Quebec"
+    email = "contact@charleslanglois.dev"
+    givenName = "Charles"
+    familyName = "Langlois"
 
 defaultContentLanguage = "en-CA"
 [languages]

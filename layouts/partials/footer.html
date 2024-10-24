@@ -1,20 +1,9 @@
 {{ $GitInfo := dict "Hash" (os.Getenv "HUGO_GIT_REV") "AbbreviatedHash" (os.Getenv "HUGO_GIT_SHORTREV") "AuthorDate" (os.Getenv "HUGO_GIT_LASTMODIFIED") }}
 <footer class="footer">
-  <div class="git">
-  {{ if .GitInfo }}
-    <div class="git-info">
-      <span class="git-updated-on">Page updated on {{ .GitInfo.AuthorDate }}</span>
-      <span class="git-revision">Git Revision <a href="{{ $.Site.Params.Github }}/commit/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a></span>
-    </div>
-  {{ end }}
-  {{ if $.Site.Params.Github }}
-    <a class="github" href="{{ $.Site.Params.Github }}">
-      <i class="fab fa-github"></i> See on GitHub
-    </a>
-  {{ end }}
-  </div>
-  
+  <!-- h-card stuf -->
+  {{ partial "h-card.html" . }}
   <div class="footer__inner">
+    <!-- attribution & copyright info -->
     {{ if $.Site.Copyright }}
       <ul class="copyright copyright--user">
         <li>{{ $.Site.Copyright | safeHTML }}</li>
@@ -30,6 +19,23 @@
         </li>
       </ul>
   </div>
+
+  <!-- source info -->
+  <div class="git">
+  {{ if .GitInfo }}
+    <div class="git-info">
+      <span class="git-updated-on">Page updated on {{ .GitInfo.AuthorDate }}</span>
+      <span class="git-revision">Git Revision <a href="{{ $.Site.Params.Github }}/commit/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a></span>
+    </div>
+  {{ end }}
+  {{ if $.Site.Params.Github }}
+    <a class="github" href="{{ $.Site.Params.Github }}">
+      <i class="fab fa-github"></i> See on GitHub
+    </a>
+  {{ end }}
+  </div>
+  <!-- Extended footer section-->
+  {{ partial "extended_footer.html" . }}
 </footer>
 
 {{ $menu := resources.Get "js/menu.js" | js.Build }}
@@ -39,6 +45,3 @@
 
 <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
 
-
-<!-- Extended footer section-->
-{{ partial "extended_footer.html" . }}

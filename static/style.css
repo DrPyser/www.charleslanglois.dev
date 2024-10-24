@@ -1,3 +1,6 @@
+strong {
+  font-weight: 700;
+}
 
 .menu {
     display: flex;
@@ -95,35 +98,37 @@ a.github {
 }
 
 
-div.h-card {
+/*
+ * h-card
+*/
+
+.h-card {
   display: flex;
-  flex-direction: column;
   box-shadow: 0 2px 2px #ccc;
   align-items: center;
   border: solid white;
   padding: 1em;
   margin: 0.5em;
+  justify-content: center;
 }
 
-.h-card .head {
-  display: flex;
+/*.h-card .head {
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
+  padding: 10px auto;
 }
+*/
 
-.h-card .head .info {
+.h-card .info {
   vertical-align: center;
+  /*flex: 75%;*/
 }
 
-div.h-card div img {
-/*  display: inline;*/
-	float: left;
-	/*width: 80px;*/
-/*	height: 80px;*/
-	margin: 1.5em auto;
-	padding: 1em auto;
+/*.h-card .img-container img {
+    margin: 0 auto 1rem;
+    width: 100%;
+    display: block;
 }
+*/
 
-div.h-card h2 {
-  margin: 0;
-}
