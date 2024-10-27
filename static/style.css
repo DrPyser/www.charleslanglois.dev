@@ -102,7 +102,7 @@ a.github {
  * h-card
 */
 
-.h-card {
+.footer .h-card {
     display: grid;
     grid-template: 'image text text';
     grid-template-columns: 1fr 1fr 1fr;
@@ -115,14 +115,14 @@ a.github {
     border: solid white;
 }
 
-.h-card .info {
+.footer .h-card .info {
     grid-area: text;
 }
 
-.h-card .image-container {
+.footer .h-card .image-container {
     grid-area: image;
 }
-.h-card img {
+.footer .h-card img {
     border-radius: 50%;
     object-fit: contain;
 }
