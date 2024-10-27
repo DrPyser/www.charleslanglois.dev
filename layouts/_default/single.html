@@ -1,0 +1,66 @@
+{{ define "main" }}
+<article class="post h-entry">
+  <h1 class="post-title p-name">
+    <a class="u-url" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h1>
+  <div class="post-meta">
+    <p>
+      {{- if .Date -}}
+      Published on
+      <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05-07:00" }}">
+	{{ .Date | time.Format ":date_full" }}
+      </time>
+      {{- if $.Site.Params.showLastUpdated -}}
+      <br/>
+      <time class="post-date dt-updated" datetime="{{ .Lastmod.Format "2006-01-02 15:04:05-07:00" }}">
+	[Updated on {{ .Lastmod | time.Format ":date_full" }}]
+      </time>
+      {{- end -}}
+      {{- end -}}
+      <br/>
+      <span>
+	{{- with $.Site.Params.hcard -}}
+	By <a class="post-author p-author h-card" href="{{ $.Site.Params.hcard.url }}">{{ .givenName }} {{ .familyName }}</a>
+	{{- end -}}
+      </span>
+    </p>
+    {{- if and (.Param "readingTime") (eq (.Param "readingTime") true) -}}
+      <span class="post-reading-time">{{ .ReadingTime }} {{ $.Site.Params.minuteReadingTime | default "min read" }} ({{ .WordCount }} {{ $.Site.Params.words | default "words" }})</span>
+    {{- end -}}
+  </div>
+
+  {{ if .Params.tags }}
+    <span class="post-tags">
+      {{ range .Params.tags }}
+      #<a class="p-category" href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+      {{ end }}
+    </span>
+  {{ end }}
+  {{ partial "cover.html" . }}
+
+  {{ if (.Params.Toc | default .Site.Params.Toc) }}
+    <div class="table-of-contents">
+      <h2>
+        {{ (.Params.TocTitle | default .Site.Params.TocTitle) | default "Table of Contents" }}
+      </h2>
+      {{ .TableOfContents }}
+    </div>
+  {{ end }}
+
+  <div class="post-content e-content">
+    {{- with .Content -}}
+      <div>
+        {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor">&#8983;</a> ${3}` | safeHTML }}
+      </div>
+    {{- end -}}
+  </div>
+
+  {{ if eq .Type $.Site.Params.contentTypeName }}
+    {{ partial "posts_pagination.html" . }}
+  {{ end }}
+
+  {{ if not (.Params.hideComments | default false) }}
+    {{ partial "comments.html" . }}
+  {{ end }}
+</article>
+{{ end }}
