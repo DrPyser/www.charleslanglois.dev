@@ -73,6 +73,7 @@ author = "Charles Langlois"
     givenName = "Charles"
     familyName = "Langlois"
     photo = "/images/selfie1.webp"
+    url = "https://www.charleslanglois.dev"
 
 defaultContentLanguage = "en-CA"
 [languages]
