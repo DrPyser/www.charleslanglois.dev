@@ -103,23 +103,27 @@ a.github {
 */
 
 .h-card {
-    display: flex;
-    box-shadow: 0 2px 2px #ccc;
-    align-items: stretch;
-    border: solid white;
+    display: grid;
+    grid-template: 'image text text';
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
     padding: 1em;
-    margin: 0.5em;
-    justify-content: flex-start;
+    margin: 0 auto;
     gap: 5%;
+    box-shadow: 0 2px 2px #ccc;
+    border: solid white;
 }
 
 .h-card .info {
-    align-content: center;
+    grid-area: text;
 }
 
+.h-card .image-container {
+    grid-area: image;
+}
 .h-card img {
-    display: flex;
-    width: 15%;
     border-radius: 50%;
+    object-fit: contain;
 }
 
