@@ -15,23 +15,23 @@
     {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
 
     {{ range $paginator.Pages }}
-      <div class="post on-list">
-        <h1 class="post-title">
-          <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+      <div class="post on-list h-entry">
+        <h1 class="post-title p-name">
+          <a class="u-url" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         </h1>
         <div class="post-meta">
-          <span class="post-date">
+          <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05-07:00" }}">
             {{ .Date.Format "2006-01-02" }}
-          </span>
-          {{ with .Params.Author }}
-            <span class="post-author">:: {{ . }}</span>
+          </time>
+          {{ with $.Site.Params.hcard }}
+            <a class="post-author p-author h-card" href="{{ .url }}">{{ .givenName }} {{ .familyName }}</a>
           {{ end }}
         </div>
 
         {{ if .Params.tags }}
           <span class="post-tags">
             {{ range .Params.tags }}
-            #<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+            #<a class="p-category" href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
               {{- . -}}
             </a>&nbsp;
             {{ end }}
@@ -42,7 +42,7 @@
           <img src="{{ .Params.Cover | absURL }}" class="post-cover" alt="{{ .Title | plainify | default " " }}" />
         {{ end }}
 
-        <div class="post-content">
+        <div class="post-content e-content">
           {{ if .Params.showFullContent }}
           {{ .Content | markdownify }}
           {{ else if .Description }}
