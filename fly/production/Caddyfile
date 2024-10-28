@@ -1,15 +1,18 @@
 {
-	auto_https off
-	log {
-		format console
-	}
+    auto_https off
+    log {
+        format console
+    }
 }
 
+charleslanglois.dev {
+    redir http://www.{host}{uri}
+}
 
 http://www-charleslanglois-dev.fly.dev, 
 http://www.charleslanglois.dev {
-	root * /srv/www/
-	log
-	encode zstd gzip
-	file_server
+    root * /srv/www/
+    log
+    encode zstd gzip
+    file_server
 }
