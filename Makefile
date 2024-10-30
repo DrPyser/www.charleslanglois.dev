@@ -54,10 +54,10 @@ ansible/publish: build
 fly.io/deploy: fly.toml
 	flyctl deploy
 
-fly.io/staging/deploy: fly/staging/fly.toml
+fly.io/staging/deploy: fly/staging/fly.toml static/git-info.txt
 	flyctl deploy -c fly/staging/fly.toml
 
-fly.io/production/deploy: fly/production/fly.toml
+fly.io/production/deploy: fly/production/fly.toml static/git-info.txt
 	flyctl deploy -c fly/production/fly.toml
 
 fly.io/staging/status:
