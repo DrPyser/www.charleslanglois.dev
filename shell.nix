@@ -1,6 +1,7 @@
 { pkgs ? import <nixpkgs> { }, theme ? import ./nix/theme.nix { inherit pkgs; } }:
-pkgs.mkShell {
-  buildInputs = with pkgs; [ hugo ansible flyctl nixfmt ];
+let twtxt = import ./twtxt.nix { inherit pkgs; };
+in pkgs.mkShell {
+  buildInputs = with pkgs; [ hugo ansible flyctl nixfmt twtxt ];
   shellHook = ''
     # set -x
     echo "Entering development environment for $PWD"
