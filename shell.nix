@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { }, theme ? import ./theme.nix { inherit pkgs; } }:
+{ pkgs ? import <nixpkgs> { }, theme ? import ./nix/theme.nix { inherit pkgs; } }:
 pkgs.mkShell {
   buildInputs = with pkgs; [ hugo ansible flyctl nixfmt ];
   shellHook = ''
