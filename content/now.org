@@ -1,0 +1,15 @@
+#+TITLE: Now
+#+DATE: <2024-11-09 Sat 16:32:55 -05:00>
+#+DRAFT: false
+#+AUTHOR: Charles Langlois
+#+TAGS: now
+#+DESCRIPTION: A short summary of what's going on in my life and mind
+#+SUMMARY: A short summary of what's going on in my life and mind
+
+- Still working at [[https://wazo.io][Wazo Communication Inc.]] for now, though incredible disappointing unexpected administrative drama might change that in the near future
+- Still living in Gatineau
+- Still working on my [[/tags/homelab][homelab of a few computers]]
+- Still working on [[/tags/telephony][telephony]]-related projects such as setting up an [[/tags/asterisk][asterisk PBX server]]
+- Put [[/tags/electronics][electronics]] learning on pause as I got more serious on other homelab projects
+- Still learning about and playing around [[/tags/telephony][old-school telephony]]
+- Became part of the privileged home-owner class with my partner this year, now learning the hardship and satisfaction of taking care of my own house and planning house projects
