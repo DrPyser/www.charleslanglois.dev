@@ -1,0 +1,104 @@
+#+TITLE: Plans
+#+DATE: [2024-11-09 Sat 17:04]
+#+DRAFT: false
+#+SUMMARY: "In which I rattle on about my plans like a stereotypical movie vilain"
+
+
+Here's some things I'm planning.
+
+
+* Homelab
+
+My home computer network setup, for utility or hobby projects.
+
+** STARTED work on asterisk pbx to do some interesting stuff, like redirect calls or log something;
+:LOGBOOK:
+- State "STARTED"    from              [2024-11-09 Sat 17:07]
+:END:
+Deployed a working asterisk PBX in a proxmox VM.
+Connected an ATA to the network and to my house phone line.
+Can now make calls out to the PSTN using my voip.ms trunk, and handle incoming calls to my DID through asterisk too.
+
+See [[/tags/asterisk][posts tagged #asterisk]] .
+** TODO write posts on accomplishments
+:LOGBOOK:
+- State "TODO"       [2024-11-09 Sat 18:28]
+:END:
+See [[/tags/homelab/][posts tagged #homelab]] .
+
+** TODO setup blocking and recursive dns server using pi-hole and unbound or similar;
+** TODO secure network: gateway firewall & traffic monitoring
+I should know and understand the network traffic going from and to the internet. Monitoring, statistical traffic analysis, etc.
+
+I should be able to centrally manage network traffic policies.
+I can do some basic stuff through my openwrt routers, but it is limited in features and resources.
+
+I'm thinking about acquiring a dedicated router and/or firewall appliance that is tasked with border control. Perhaps an OpnSense box.
+** TODO experiment with XMPP
+I'm discovering [[https://xmpp.org/][XMPP]]. It's a really cool protocol with a nice baseline design and impressive standardization of extensions.
+
+Being extensible by design, it can be used to support all kinds of use cases, and has been extensively used for /presence/ (sharing status information) and /chat/ (instant messaging).
+
+I'm wanting to experiment with hosting my own server instance, and developing client-side tools. I might try to integrate my asterisk PBX with an XMPP server, and play with presence management and notifications.
+For example,
+- publish telephone devices presence events through XMPP
+- use XMPP presence to make call routing decisions(don't route call to device that has declared itself unavailable)
+- publish some events through XMPP, such as calls being received, phones taken off hook, outcalls being made, etc
+** DONE acquire analog phone adapter to reuse analog phone as SIP endpoint with asterisk PBX
+:LOGBOOK:
+- State "DONE"       from              [2024-11-09 Sat 17:07]
+:END:
+Found a grandstream HT801 for 5 bucks, works very well after I got to understand the configuration.
+
+Using it with my collection of analog phones and my house phone lines to interact with my asterisk PBX, make outcalls to the PSTN, and receive calls to my voip.ms DID on my house phones.
+
+
+* Electronics
+Adventures in the land of silicon and electrons.
+
+** TODO complete arduino tutorial circuits
+Did some circuits, bypassing some boring ones in favor of those that interest me, such as audio circuits.
+
+But for the sake of learning and practice I should go through them all and make sure I grok everything.
+
+** STARTED read through [[http://www.handmadeelectronicmusic.com/index.htm][Handmade Electronic Music]] and follow along
+
+** STARTED continue learning about analog phone systems; reproduce basic signaling and audio through simple circuits
+
+
+Got some understanding of how analog phone systems work.
+
+For example, I now understand the phone line (Central office circuit) acts like a /current source/.
+This means the voltage will vary based on the impedance on the circuit, while the line tries to maintain a constant current flowing.
+Should make [[/tags/telephony][a post about it]] some time.
+
+
+** STARTED make posts on some interesting bits of learnings
+
+See [[/tags/electronics/][posts tagged with #electronics]] .
+
+
+* Website
+
+**  continue [[https://indieweb.org/IndieMark][indiewebifying this website]] and reach for [[https://indieweb.org/graphics#Illustrations_and_Sketch_Notes][indieweb holy grail]]
+
+*** STARTED microformats in the html
+    
+*** TODO micropub server & workflow for easy publishing
+    
+*** TODO outgoing webmentions dispatch
+    
+*** TODO incoming webmentions processing pipeline
+
+** TODO add "notes" section for short, informal(low effort) pieces of thoughts and knowledge
+
+** STARTED add/integrate twtxt microblogging
+***  render [[https://indieweb.org/twtxt][twtxt]] timeline as a web page
+
+**  add more content about stuff I find interesting
+*** STARTED share interesting blogs, video channels and other cool stuff and people I encounter.
+*** TODO bookmarks / link dump page
+
+**  UX/UI improvements
+***  [[https://github.com/xtermjs/xterm.js/][terminal ui]]
+***  play around with [[https://htmx.org/][HTMX]]
