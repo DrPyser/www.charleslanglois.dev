@@ -104,19 +104,29 @@ defaultContentLanguage = "en-CA"
         identifier = "about"
         name = "About"
         url = "/about"
+	weight = 1
       [[languages.en.menu.main]]
         identifier = "music"
         name = "Music"
         url = "/music"
+	weight = 20
       [[languages.en.menu.main]]
         identifier = "posts"
         name = "Posts"
         url = "/posts"
+	weight = 5
       [[languages.en.menu.main]]
         identifier = "now"
         name = "Now"
         url = "/now"
+	weight = 10
       [[languages.en.menu.main]]
         identifier = "plans"
         name = "Plans"
         url = "/plans"
+	weight = 20
+      [[languages.en.menu.main]]
+        identifier = "befores"
+        name = "Befores"
+        url = "/before"
+	weight = 100
