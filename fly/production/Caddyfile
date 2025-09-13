@@ -6,7 +6,7 @@
 }
 
 charleslanglois.dev {
-    redir http://www.{host}{uri}
+    redir https://www.{host}{uri}
 }
 
 http://www-charleslanglois-dev.fly.dev, 
