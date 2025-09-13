@@ -8,9 +8,10 @@ let
         inherit pname version;
         sha256 = "8V5YD4AWBxRIskBIQCuTm56N7Afqus2EsfKHjXUbcf8=";
       };
-      nativeBuildInput = [ setuptools ];
+      build-system = [ setuptools ];
+      pyproject = true;
       propagatedBuildInputs =
-        [ setuptools aiohttp python-dateutil humanize click ];
+        [ aiohttp python-dateutil humanize click ];
     };
 in twtxt
 
