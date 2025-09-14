@@ -5,10 +5,19 @@
 	}
 }
 
-http://www2.charleslanglois.dev, 
+http://localhost, http://www2.charleslanglois.dev, 
 http://www2-charleslanglois-dev-crimson-night-7748.fly.dev {
+	@terminal_client {
+		# matcher for terminal clients that want human-readable text
+		expression header({'User-Agent': 'curl*'}) && ! header({'Accept': '*html'})
+	}
+
 	root * /srv/www/
 	log
 	encode zstd gzip
 	file_server
+	handle @terminal_client {
+		# try and serve a text file for terminal clients
+		try_files {file.base}.txt /index.txt
+	}
 }
