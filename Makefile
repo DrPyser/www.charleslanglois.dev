@@ -1,7 +1,7 @@
 SHELL=/usr/bin/env bash
 SHELLFLAGS=-eux -o pipefail
 MAKEFLAGS+=--no-builtin-rules --warn-undefined-variables
-.PHONY: build publish ansible/publish clean rebuild nix/flake/update nix/flake/build nix/flake/container fly.io/deploy fly.io/launch fly.io/status git/stamp content/posts
+.PHONY: build publish ansible/publish clean rebuild nix/flake/update nix/flake/build nix/flake/container fly.io/deploy fly.io/launch fly.io/status git/stamp content/posts develop
 .DELETE_ON_ERROR:
 
 CADDYFILE=Caddyfile
@@ -15,6 +15,10 @@ $(OUT): $(FILES)
 	hugo $(BUILDOPTS) ${OUT}
 
 build: $(OUT)
+
+develop:
+	docker build -f dev.Dockerfile -t www-charleslanglois-dev-devel .
+	docker run -it --rm -v $$PWD:/src -p 1313:1313 www-charleslanglois-dev-devel
 
 clean:
 	rm -r $(OUT)
