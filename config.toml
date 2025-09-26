@@ -57,6 +57,8 @@ author = "Charles Langlois"
   github = "https://github.com/DrPyser/www.charleslanglois.dev"
   favicon = "favicon.ico"
 
+  vcardfile = "/vcard.vcf"
+
 
 # for links to social profiles
 [params.social]

@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:4.0
+FN:Charles Langlois
+N:Langlois;Charles;;;BSc.
+LANG:fr-CA
+LANG:en-CA
+GENDER:M
+EMAIL;TYPE=work:charles.langlois@wazo.io
+EMAIL;PREF=1:contact@charleslanglois.dev
+TZ:America/Toronto
+TITLE:Software Developer
+URL:https://www.charleslanglois.dev
+END:VCARD
