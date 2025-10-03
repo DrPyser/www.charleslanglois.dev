@@ -1,3 +1,5 @@
+name: CD staging
+
 on:
   push:
     branches:
