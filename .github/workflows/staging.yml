@@ -9,6 +9,7 @@ on:
 
 jobs:
   fly_to_staging:
+    environment: staging
     name: build & deploy to staging
     runs-on: ubuntu-22.04
     steps:
