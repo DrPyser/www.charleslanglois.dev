@@ -10,7 +10,6 @@ COPY themes /src/themes
 COPY content /src/content
 COPY config.toml /src/
 COPY archetypes /src/archetypes
-COPY resources /src/resources
 COPY layouts /src/layouts
 COPY static /src/static
 COPY assets /src/assets
