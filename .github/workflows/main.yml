@@ -38,8 +38,4 @@ jobs:
           # extra_nix_config: # optiona
 
       - run: nix-shell --run 'make build'
-      # - run: scripts/publish.sh
-      #   env:
-      #     DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-      #   if: github.ref == 'refs/heads/main'
 
