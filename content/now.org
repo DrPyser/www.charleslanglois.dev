@@ -2,7 +2,7 @@
 #+DATE: <2024-11-09 Sat 16:32:55 -05:00>
 #+DRAFT: false
 #+AUTHOR: Charles Langlois
-#+TAGS: now
+#+TAGS[]: now
 #+DESCRIPTION: A short summary of what's going on in my life and mind
 #+SUMMARY: A short summary of what's going on in my life and mind
 
