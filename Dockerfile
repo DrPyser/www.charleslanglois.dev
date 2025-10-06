@@ -1,4 +1,4 @@
-FROM hugomods/hugo:go-git-0.121.2 as buildenv
+FROM hugomods/hugo:go-git-0.136.5 as buildenv
 ARG ENVIRONMENT=development
 ENV ENVIRONMENT=${ENVIRONMENT}
 ARG HUGO_BASEURL=https://www.charleslanglois.dev
