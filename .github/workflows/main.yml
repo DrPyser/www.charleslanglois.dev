@@ -39,5 +39,5 @@ jobs:
           # gets appended to `/etc/nix/nix.conf` if passed.
           # extra_nix_config: # optiona
 
-      - run: nix-shell --run 'make build'
+      - run: nix-build
 
