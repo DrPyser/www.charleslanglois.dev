@@ -20,8 +20,8 @@ staging/build: BUILDOPTS+=-D
 staging/build: build
 
 develop:
-	docker build -f dev.Dockerfile -t www-charleslanglois-dev-devel .
-	docker run -it --rm -v $$PWD:/src -p 1313:1313 www-charleslanglois-dev-devel
+	docker build -f dev.Dockerfile -t www-charleslanglois-dev:dev .
+	docker run -it --rm -v $$PWD:/src -p 1313:1313 www-charleslanglois-dev:dev
 
 clean:
 	rm -r $(OUT)
