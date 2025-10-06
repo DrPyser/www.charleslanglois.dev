@@ -1,7 +1,7 @@
 +++
 title = "Shout-Out: Technology Connections"
 date = 2024-01-18T08:41:01-05:00
-draft = true
+draft = false
 tags = ["shout-out", "content-creator", "technology", "videos"]
 description = "In which I mention a cool content creator: Technology Connections"
 +++
