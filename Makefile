@@ -8,11 +8,11 @@ CADDYFILE=Caddyfile
 
 OUT:=./public
 DIRS=content static layouts themes resources
-FILES=$(shell fd . $(DIRS)) config.toml
-BUILDOPTS:=-D -d 
+FILES=$(shell git ls-files -- $(DIRS) config.toml | xargs -I{} printf %b "{}\n")
+BUILDOPTS:=--logLevel debug
 
 $(OUT): $(FILES)
-	hugo $(BUILDOPTS) ${OUT}
+	hugo build $(BUILDOPTS) -d ${OUT}
 
 build: $(OUT)
 
