@@ -12,6 +12,7 @@ primary_region = "yul"
     CADDYFILE="fly/staging/Caddyfile"
     ENVIRONMENT="staging"
     HUGO_BASEURL="https://www2.charleslanglois.dev"
+    HUGO_BUILDOPTS="-D"
 
 [http_service]
   internal_port = 80
