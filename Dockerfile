@@ -1,11 +1,8 @@
 FROM hugomods/hugo:go-git-0.136.5 as buildenv
 ARG ENVIRONMENT=development
-ENV ENVIRONMENT=${ENVIRONMENT}
 ARG HUGO_BASEURL=https://www.charleslanglois.dev
-ENV HUGO_BASEURL=${HUGO_BASEURL}
 ARG HUGO_BUILDOPTS=""
 
-# COPY . /src
 COPY themes /src/themes
 COPY content /src/content
 COPY config.toml /src/
@@ -15,12 +12,16 @@ COPY static /src/static
 COPY assets /src/assets
 COPY .git /src/.git
 
-RUN echo -e "rev=$(git rev-parse HEAD)\n"\
-    "branch=$(git rev-parse --abbrev-ref HEAD)\n"\
-    "description=$(git describe --abbrev --all --long --dirty)" \
-    > /src/static/git-info.txt
+WORKDIR /src
+RUN <<EOF
+git config --global --add safe.directory /src
+echo -e "rev=$(git rev-parse HEAD)\n"\
+  "branch=$(git rev-parse --abbrev-ref HEAD)\n"\
+  "description=$(git describe --abbrev --all --long --dirty)" \
+  > /src/static/git-info.txt
+EOF
 
-RUN hugo $HUGO_BUILDOPTS --logLevel debug --enableGitInfo --environment $ENVIRONMENT -d /public
+RUN hugo build $HUGO_BUILDOPTS --logLevel debug --enableGitInfo --environment $ENVIRONMENT -d /public
 
 FROM caddy:2.7 as final
 ARG ENVIRONMENT=development
