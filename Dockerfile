@@ -3,7 +3,7 @@ ARG ENVIRONMENT=development
 ENV ENVIRONMENT=${ENVIRONMENT}
 ARG HUGO_BASEURL=https://www.charleslanglois.dev
 ENV HUGO_BASEURL=${HUGO_BASEURL}
-ARG HUGO_BUILDOPTS="--enableGitInfo --environment $ENVIRONMENT -d /public"
+ARG HUGO_BUILDOPTS=""
 
 # COPY . /src
 COPY themes /src/themes
@@ -20,7 +20,7 @@ RUN echo -e "rev=$(git rev-parse HEAD)\n"\
     "description=$(git describe --abbrev --all --long --dirty)" \
     > /src/static/git-info.txt
 
-RUN hugo $HUGO_BUILDOPTS
+RUN hugo $HUGO_BUILDOPTS --logLevel debug --enableGitInfo --environment $ENVIRONMENT -d /public
 
 FROM caddy:2.7 as final
 ARG ENVIRONMENT=development
