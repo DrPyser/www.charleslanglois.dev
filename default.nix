@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation {
     git
   ];
   buildPhase = ''
-  substituteInPlace Makefile --replace-fail /bin/bash ${pkgs.bash}/bin/bash
+  substituteInPlace Makefile --replace-fail "/usr/bin/env bash" "${pkgs.bash}/bin/bash"
   make -B build
   '';
 
