@@ -98,37 +98,37 @@ defaultContentLanguage = "en-CA"
       missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "charleslanglois.dev"
+      logoText = "/srv/www/charleslanglois.dev"
       logoHomeLink = "/"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "about"
-        name = "About"
+        name = "~/About"
         url = "/about"
 	weight = 1
       [[languages.en.menu.main]]
         identifier = "music"
-        name = "Music"
+        name = "~/Music"
         url = "/music"
 	weight = 20
       [[languages.en.menu.main]]
         identifier = "posts"
-        name = "Posts"
+        name = "~/Posts"
         url = "/posts"
 	weight = 5
       [[languages.en.menu.main]]
         identifier = "now"
-        name = "Now"
+        name = "~/Now"
         url = "/now"
 	weight = 10
       [[languages.en.menu.main]]
         identifier = "plans"
-        name = "Plans"
+        name = "~/Plans"
         url = "/plans"
 	weight = 20
       [[languages.en.menu.main]]
         identifier = "befores"
-        name = "Befores"
+        name = "~/Befores"
         url = "/before"
 	weight = 100
