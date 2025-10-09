@@ -89,8 +89,8 @@ a.github {
 
 .footer .h-card {
     display: grid;
-    grid-template: 'image text text';
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template: 'image text';
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
     padding: 1em;
@@ -102,6 +102,13 @@ a.github {
 
 .footer .h-card .info {
     grid-area: text;
+    word-wrap: break-word;
+}
+
+@media (max-width:350px) {
+    .footer .h-card .info {
+        word-wrap: anywhere;
+    }
 }
 
 .footer .h-card .image-container {
@@ -111,4 +118,3 @@ a.github {
     border-radius: 50%;
     object-fit: contain;
 }
-

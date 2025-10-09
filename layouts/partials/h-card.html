@@ -16,11 +16,13 @@
       </a>
     </strong>
     <p>
+      <a class="u-email" href="mailto:{{ $.Site.Params.Hcard.Email }}">{{ $.Site.Params.Hcard.Email }}</a>
+    </p>
+    <p>
       Currently living in
       <span class="p-locality">{{ $.Site.Params.Hcard.City }}</span>,
       <span class="p-region">{{ $.Site.Params.Hcard.Region }}</span>,
       <span class="p-country-name">{{ $.Site.Params.Hcard.Country }}</span>
     </p>
-    <a class="u-email" href="mailto:{{ $.Site.Params.Hcard.Email }}">{{ $.Site.Params.Hcard.Email }}</a>
   </div>
 </div>
