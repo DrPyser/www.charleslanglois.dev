@@ -49,8 +49,8 @@ ul.social-list li {
 .footer .git-info {
     display: inline-flex;
     flex-direction: column;
-    vertical-align: bottom;
     justify-content: center;
+    text-align: center;
 }
 
 a.github {
