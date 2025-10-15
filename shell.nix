@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { }, theme ? import ./nix/theme.nix { inherit pkgs; } }:
+{ pkgs ? import <nixpkgs-unstable> { }, theme ? import ./nix/theme.nix { inherit pkgs; } }:
 let twtxt = import ./nix/twtxt.nix { inherit pkgs; };
 in pkgs.mkShell {
   buildInputs = with pkgs; [
