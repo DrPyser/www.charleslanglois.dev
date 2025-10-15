@@ -24,7 +24,31 @@ That being said, up until now I had no automation for the deployment of this web
 
 Every deployment action to either prod or staging was done by hand, though, which is fine considering how simple that is and how rarely I push updates up to now (see [the fly.io deploy commands in the repo's makefile](https://github.com/DrPyser/www.charleslanglois.dev/blob/da994558f957b0efd7ba92db9abd25e76d7939c6/Makefile)).
 
-Now, [with a small amount of YAML in my github actions](https://github.com/DrPyser/www.charleslanglois.dev/blob/bc2c46d2043c488e4536cc4621ecb601122aabc3/.github/workflows/staging.yml), any updates pushed to the main branch of the git repository is automatically deployed to my staging environment.
+Now, [with a small amount of YAML in my github actions](https://github.com/DrPyser/www.charleslanglois.dev/blob/bc2c46d2043c488e4536cc4621ecb601122aabc3/.github/workflows/staging.yml), any updates pushed to the main branch of the git repository is automatically deployed to my staging environment:
+```yaml
+name: CD staging
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  fly_to_staging:
+    environment: staging
+    name: build & deploy to staging
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: GitHub Action for flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@1.5
+      - run: flyctl deploy --remote-only -c fly/staging/fly.toml
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}  
+```
 
 For production, I am still keeping it manual for now. That way, I can work fast and break things on staging, and only deploy on prod when I make a conscious decision and press the metaphorical red button.
 Seems like a good tradeoff between simplicity, convenience and stability.
