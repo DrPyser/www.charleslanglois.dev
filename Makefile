@@ -58,15 +58,17 @@ nix/container: $(CONTAINER_PATH)
 ansible/publish: build
 	ansible-playbook -i ansible/inventory ansible/playbooks/update_server.yml
 
+FLYOPTS=
+
 # fly.io stuff
 fly.io/deploy: fly.toml
-	flyctl deploy
+	flyctl deploy $(FLYOPTS)
 
 fly.io/staging/deploy: fly/staging/fly.toml static/git-info.txt
-	flyctl deploy -c fly/staging/fly.toml
+	flyctl deploy $(FLYOPTS) -c fly/staging/fly.toml
 
 fly.io/production/deploy: fly/production/fly.toml static/git-info.txt
-	flyctl deploy -c fly/production/fly.toml
+	flyctl deploy $(FLYOPTS) -c fly/production/fly.toml
 
 fly.io/staging/status:
 	flyctl status -c fly/staging/fly.toml
