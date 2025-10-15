@@ -8,20 +8,20 @@
       {{- if .Date -}}
       Published on
       <time class="post-date dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05-07:00" }}">
-	{{ .Date | time.Format ":date_full" }}
+      {{ .Date | time.Format ":date_full" }}
       </time>
       {{- if $.Site.Params.showLastUpdated -}}
       <br/>
       <time class="post-date dt-updated" datetime="{{ .Lastmod.Format "2006-01-02 15:04:05-07:00" }}">
-	[Updated on {{ .Lastmod | time.Format ":date_full" }}]
+      [Updated on {{ .Lastmod | time.Format ":date_full" }}]
       </time>
       {{- end -}}
       {{- end -}}
       <br/>
       <span>
-	{{- with $.Site.Params.hcard -}}
-	By <a class="post-author p-author h-card" href="{{ $.Site.Params.hcard.url }}">{{ .givenName }} {{ .familyName }}</a>
-	{{- end -}}
+      {{- with $.Site.Params.hcard -}}
+      By <a class="post-author p-author h-card" rel="author" href="{{ $.Site.Params.hcard.url }}">{{ .givenName }} {{ .familyName }}</a>
+      {{- end -}}
       </span>
     </p>
     {{- if and (.Param "readingTime") (eq (.Param "readingTime") true) -}}
