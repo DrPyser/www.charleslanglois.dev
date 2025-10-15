@@ -7,10 +7,10 @@
 {{ end }}
 
 <!-- indieauth -->
-<link rel="openid.delegate" href="https://www.charleslanglois.dev/" />
-<link rel="openid.server" href="https://openid.indieauth.com/openid" />
+<link rel="openid.delegate" href="https://www.charleslanglois.dev/">
+<link rel="openid.server" href="https://openid.indieauth.com/openid">
 <link rel="authorization_endpoint" href="https://indieauth.com/auth">
 <link rel="token_endpoint" href="https://tokens.indieauth.com/">
 <link rel="author" type="text/vcard" href="{{ $.Site.Params.vcardfile }}">
 <!--<link rel="micropub" href="/micropub">-->
-
+<meta name="fediverse:creator" content="{{ $.Site.Params.social.mastodonAccount }}">

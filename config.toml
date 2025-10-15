@@ -64,6 +64,7 @@ author = "Charles Langlois"
 [params.social]
   facebookLink = "https://www.facebook.com/charles.langlois.9"
   mastodonLink = "https://indieweb.social/@drpyser"
+  mastodonAccount = "@drpyser@indieweb.social"
   githubLink = "https://github.com/DrPyser"
 
 # info for hcard
