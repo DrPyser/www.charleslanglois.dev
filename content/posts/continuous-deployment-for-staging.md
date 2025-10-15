@@ -7,7 +7,7 @@ keywords: []
 description: "Notes on adding continuous deployment through github actions"
 showFullContent: false
 readingTime: false
-draft: true
+draft: false
 ---
 
 Just added a small upgrade to this website's maintenance workflow: continuous deployment to the staging grounds.
