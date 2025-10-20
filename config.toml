@@ -66,6 +66,7 @@ author = "Charles Langlois"
   mastodonLink = "https://indieweb.social/@drpyser"
   mastodonAccount = "@drpyser@indieweb.social"
   githubLink = "https://github.com/DrPyser"
+  blueskyLink = "https://bsky.app/profile/charleslanglois.dev"
 
 # info for hcard
 [params.hcard]
