@@ -5,14 +5,14 @@ set -x
 
 WEBFINGER_STATIC="$ROOT/webfinger.json"
 
-resource=$(printf %s "$QUERY_STRING" | tr '&' '\n' | grep 'resource=' | cut -d'=' -f2)
+resource=$(printf %s "$QUERY_STRING" | tr '&' '\n' | grep 'resource=' | cut -d'=' -f2 || true)
 
 function error(){
   printf %b "$@\n" >&2
 }
 
 function check_resource(){
-  jq -r '.subject,.aliases[]' "$WEBFINGER_STATIC" | grep -q -x -F "$resource"
+  test -n "$resource" && jq -r '.subject,.aliases[]' "$WEBFINGER_STATIC" | grep -q -x -F "$resource"
 }
 
 function reply_webfinger(){
@@ -21,7 +21,7 @@ function reply_webfinger(){
 }
 
 function reply_not_found(){
-  error "no such resource $resource at this address"
+  error "no such resource '$resource' at this address"
   printf "Status: 404 Not Found\n\n"
 }
 
