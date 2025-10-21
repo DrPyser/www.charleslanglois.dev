@@ -3,6 +3,7 @@
     log {
         format console
     }
+    order cgi before respond
 }
 
 charleslanglois.dev {
@@ -15,4 +16,7 @@ http://www.charleslanglois.dev {
     log
     encode zstd gzip
     file_server
+    cgi /.well-known/webfinger /usr/local/cgi-bin/webfinger {
+        env ROOT=/srv/www
+    }
 }
