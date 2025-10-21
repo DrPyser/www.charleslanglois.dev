@@ -6,7 +6,7 @@
     order cgi before respond
 }
 
-charleslanglois.dev {
+http://charleslanglois.dev {
     redir https://www.{host}{uri}
 }
 
