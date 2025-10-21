@@ -23,10 +23,18 @@ EOF
 
 RUN hugo build $HUGO_BUILDOPTS --logLevel debug --enableGitInfo --environment $ENVIRONMENT -d /public
 
-FROM caddy:2.7 as final
+FROM caddy:2-builder AS caddy-builder
+
+RUN xcaddy build \
+    --with github.com/aksdb/caddy-cgi/v2
+
+FROM caddy:2-alpine as final
 ARG ENVIRONMENT=development
 ENV ENVIRONMENT=${ENVIRONMENT}
 ARG CADDYFILE=${ENVIRONMENT}.caddyfile
 
+RUN apk add jq
+
 COPY ${CADDYFILE} /etc/caddy/Caddyfile
 COPY --from=buildenv /public /srv/www
+COPY --from=caddy-builder /usr/bin/caddy /usr/bin/caddy

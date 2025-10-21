@@ -3,6 +3,7 @@
 	log {
 		format console
 	}
+    order cgi before respond
 }
 
 http://localhost, http://www2.charleslanglois.dev, 
@@ -13,11 +14,17 @@ http://www2-charleslanglois-dev-crimson-night-7748.fly.dev {
 	}
 
 	root * /srv/www/
-	log
+	log console
 	encode zstd gzip
 	file_server
 	handle @terminal_client {
 		# try and serve a text file for terminal clients
 		try_files {file.base}.txt /index.txt
+	}
+
+	cgi /hello /usr/local/cgi-bin/hello
+	cgi /.well-known/webfinger /usr/local/cgi-bin/webfinger {
+		env ROOT=/srv/www
+		# inspect
 	}
 }
