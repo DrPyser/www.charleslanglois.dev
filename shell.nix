@@ -7,6 +7,7 @@ in pkgs.mkShell {
     flyctl
     nixfmt
     twtxt
+    pup
     python312Packages.vobject
     python312Packages.beautifulsoup4
     python312Packages.mf2py
