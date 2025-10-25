@@ -22,12 +22,16 @@
   {{ end }}
   {{ if $.Site.Params.Social.blueskyLink }}
   <li class="social-item">
-    <a class="social-link" rel="me" href="{{ $.Site.Params.Social.blueskyLink }}">
+    <a class="social-link" rel="me atproto" href="{{ $.Site.Params.Social.blueskyLink }}">
       <i class="fab fa-bluesky"></i>
     </a>
   </li>
   {{ end }}
   <li class="social-item">
-    <a class="social-link" rel="alternate" href="/index.xml"><i class="fa-solid fa-square-rss"></i></a>
+    <a class="social-link" rel="alternate" type="application/rss+xml" href="/index.xml"><i class="fa-solid fa-square-rss"></i></a>
   </li>
+  <li class="social-item">
+    <a class="social-link" rel="me" href="mailto:homepage@charleslanglois.dev"><i class="fa-solid fa-at"></i></a>
+  </li>
+
 </ul>
