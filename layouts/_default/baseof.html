@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="h-feed" lang="{{ $.Site.Language }}">
+<head>
+  {{ block "title" . }}
+    <title class="p-name">{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+  {{ end }}
+  <link class="u-url" rel="self" href="{{ .Permalink }}">
+  {{ partial "head.html" . }}
+  <meta name="hugo-template" content="{{ .CurrentSection | default .Type }}">
+</head>
+<body class="{{- ( or .Params.color $.Site.Params.ThemeColor ) -}}">
+{{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
+<div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default true) " headings--one-size" "" }}">
+
+  {{ partial "header.html" . }}
+
+  <div class="content">
+    {{ if hugo.IsServer }}
+    {{ $template := .CurrentSection | default .Type }}
+    <p>{{ printf "Template: " }}{{ $template }}</p>
+    {{ end }}
+    {{ block "main" . }}
+    {{ end }}
+  </div>
+
+  {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+  {{ end }}
+</div>
+
+</body>
+</html>
