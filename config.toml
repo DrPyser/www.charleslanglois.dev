@@ -80,6 +80,10 @@ author = "Charles Langlois"
     photo = "/images/selfie1.webp"
     url = "https://www.charleslanglois.dev"
 
+[markup]
+[markup.goldmark]
+renderer.unsafe = true
+
 defaultContentLanguage = "en-CA"
 [languages]
   [languages.en]
