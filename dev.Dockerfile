@@ -7,4 +7,4 @@ VOLUME /src
 
 WORKDIR /src
 
-CMD ["hugo", "serve", "--environment", "$ENVIRONMENT", "-D", "--enableGitInfo", "--bind", "0.0.0.0"]
+CMD ["hugo", "serve", "--logLevel", "debug", "-v", "--debug", "--environment", "$ENVIRONMENT", "-D", "--enableGitInfo", "--bind", "0.0.0.0"]
