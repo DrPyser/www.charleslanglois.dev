@@ -1,0 +1,20 @@
+name: CD production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fly_to_prod:
+    environment: production
+    name: build & deploy to prod
+    runs-on: ubuntu-22.04
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: GitHub Action for flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@1.5
+      - run: flyctl deploy --remote-only -c fly/production/fly.toml
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
