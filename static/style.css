@@ -35,6 +35,7 @@ ul.social-list li {
 
 .social-link {
     font-size: 1.333em;
+    color: white;
 }
 
 .footer div.git {
@@ -117,4 +118,23 @@ a.github {
 .footer .h-card img {
     border-radius: 50%;
     object-fit: contain;
+}
+
+.bookmark {
+    i + span {
+        padding: 0.5em;
+    }
+    
+    .bookmark-title {
+    }
+    
+}
+
+a {
+    text-decoration: none;
+    color: #23B0FF;
+}
+
+a:hover {
+    text-decoration: underline;
 }
