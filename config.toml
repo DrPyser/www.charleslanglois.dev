@@ -139,3 +139,9 @@ defaultContentLanguage = "en-CA"
         name = "~/Befores"
         url = "/before"
 	weight = 100
+      [[languages.en.menu.main]]
+        identifier = "bookmarks"
+        name = "~/Bookmarks"
+        url = "/bookmarks"
+	weight = 100
+
